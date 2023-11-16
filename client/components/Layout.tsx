@@ -1,16 +1,15 @@
-import { useFruits } from '../hooks/useFruits.ts'
+import { Outlet } from 'react-router-dom'
 
-function App() {
-  const { data } = useFruits()
+
+function Layout() {
+
 
   return (
     <>
-      <div className="app">
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>{data && data.map((fruit) => <li key={fruit}>{fruit}</li>)}</ul>
-      </div>
+    <h1> Layout is working</h1>
+      <Outlet />
     </>
   )
 }
 
-export default App
+export default Layout

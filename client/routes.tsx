@@ -8,5 +8,5 @@ export const routes = createRoutesFromElements(
   <Route element={<Layout />}>
     <Route index element={<HomePage />} />
     <Route path="dances/:id" element={<DanceDetails />} />
-  </Route>,
+  </Route>
 )
