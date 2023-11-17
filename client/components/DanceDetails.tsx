@@ -2,9 +2,8 @@ import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
 import * as api from '../apis/apiClient'
 
-const id = useParams
-
 export default function DanceDetails() {
+  const id = Number(useParams)
   const {
     data: dance,
     isError,
@@ -22,8 +21,9 @@ export default function DanceDetails() {
   return (
     <div className="dance-container">
       {dance.map((d) => (
-        <div className="dance-div" key={dance.id}>
-          {dance.name}
+        <div className="dance-div" key={d.id}>
+          <p>{d.name}</p>
+          <p>{d.description}</p>
         </div>
       ))}
     </div>
