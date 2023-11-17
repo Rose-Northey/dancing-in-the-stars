@@ -6,24 +6,34 @@ export async function getAllFruits(db = connection): Promise<Fruit[]> {
 }
 
 export async function getAllDances(db = connection): Promise<Dance[]> {
-  return db('Dances').select('*', 'is_complete as isComplete')
+  return db('Dances').select('*', 'is_complete as isComplete').returning('*')
 }
 
 export async function getDancebyId(
-  { id }: Dance,
+  id: number,
   db = connection,
 ): Promise<Dance[]> {
-  return db('Dances').select('*', 'is_complete as isComplete').where('id', id)
-    .first
+  console.log()
+  return db('Dances')
+    .select('*', 'is_complete as isComplete')
+    .where('id', id)
+    .first()
 }
 
 export async function countCompletion(db = connection): Promise<Dance[]> {
-  return db('Dances').select('is_complete as isComplete')
+  return db('Dances')
+    .select('is_complete as isComplete')
+    .count('* as count')
+    .groupBy('Dances.is_complete')
 }
 
 export async function updateCompletion(
-  { id, isComplete }: Dance,
+  id: number,
+  isComplete: boolean,
   db = connection,
-): Promise<Dance[]> {
-  return db('Dances').update({ isComplete: isComplete }).where('id', id)
+) {
+  return db('Dances')
+    .where({ id })
+    .update({ isComplete: isComplete })
+    .returning(['id', 'isComplete as is_complete'])
 }
