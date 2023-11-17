@@ -15,6 +15,7 @@ const router = Router()
 //   }
 // })
 
+// /v1/dances
 router.get('/', async (req, res) => {
   try {
     const dances = await db.getAllDances()
@@ -26,6 +27,7 @@ router.get('/', async (req, res) => {
   }
 })
 
+// /v1/dances/:id
 router.get('/count', async (req, res) => {
   try {
     const count = await db.countCompletion()
@@ -37,25 +39,28 @@ router.get('/count', async (req, res) => {
   }
 })
 
-router.patch('/count/:id', async (req, res) => {
+// /v1/dances/count/:id
+router.get('/count', async (req, res) => {
   try {
     const { id } = req.params
-    const { isComplete } = req.body
-    const updatedCount = await db.updateCompletion(id, isComplete)
+    const singleDance = await db.getDancebyId(id)
 
-    res.json(updatedCount)
+    res.json(singleDance)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong!' })
   }
 })
 
-router.get('/:id', async (req, res) => {
+// /v1/dances/:id
+router.patch('/:id', async (req, res) => {
   try {
-    const { id } = req.params
-    const singleDance = await db.getDancebyId(id)
+    const id = parseInt(req.params.id)
+    console.log(id)
 
-    res.json(singleDance)
+    const completionArray = await db.updateCompletion(id)
+
+    res.json(completionArray)
   } catch (error) {
     console.log(error)
     res.status(500).json({ message: 'Something went wrong!' })
