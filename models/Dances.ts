@@ -6,3 +6,11 @@ export interface Fruit {
 export interface FruitData {
   name: string
 }
+
+export interface Dance {
+  id: number
+  name: string
+  description: string
+  link: string
+  isComplete: boolean
+}
