@@ -1,7 +1,8 @@
-import { getAllDances } from '../apis/apiClient'
+import { getAllDances, getNumberCompleted } from '../apis/apiClient'
 
 export default function HomePage() {
   getAllDances()
+  getNumberCompleted()
 
   return (
     <>
