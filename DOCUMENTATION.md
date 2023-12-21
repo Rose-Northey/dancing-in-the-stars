@@ -1,4 +1,4 @@
-# Exposure Therapy Documentation
+# Dancing in the Stars Documentation
 
 ## Server API Endpoints
 
@@ -7,8 +7,8 @@
   | GET    | `/v1/dances`                 | Get a list of dances                       | An array of dances          |
   | GET    | `/v1/dances/:id`             | Get a dance object by id                   | A specific dance object     |
   | GET    | `/v1/dances`                 | Get the isComplete field                   | An array of boolean         |
-  <!-- | POST   | `/v1/posts`                  | Add a new blog post                        | The newly created blog post | -->
   | PATCH  | `/v1/dances/:id`             | Update the isComplte field                 | The updated boolean value (true)  |
+    <!-- | POST   | `/v1/posts`                  | Add a new blog post                        | The newly created blog post | -->
        
 
 ## Post Endpoints
