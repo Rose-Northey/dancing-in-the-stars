@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin:0;
   padding:0;
+  font-family: orbitron, Courier, monospace;
 }
 
 html, 
@@ -11,25 +12,38 @@ body {
   font-family: 'Montserrat', sans-serif;
   margin: 0;
   padding:0;
-  height: 100%;
   display:flex;
   justify-content: center;
 }
 
-html{
+#app{
+  display:flex;
+  justify-content: center;
   height:100%;
+  padding:1rem;
+  width:100%
 }
 
 img{
-  max-width:100%;
-  max-height:100%;
+  max-width:100%
 }
 
+header{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
+  margin-bottom: 1rem;
+}
 
 h1{
   font-family: silkscreen;
   margin:0;
-  line-height: 1.7rem;
+  line-height: 1.9rem;
+  font-size: 3rem;
+}
+h2{
+  text-align: center;
 }
 
 header h1{
@@ -42,38 +56,43 @@ header p{
 
 .subheader{
   font-family: orbitron;
+  letter-spacing: 0.4rem;
   margin-top:0.5rem;
+  color:rgba(240, 248, 255, 0.629);
 }
 
-div.alien{
+.homepage{
   display:flex;
+  align-items: start;
   justify-content: center;
-  align-items: center;
+
+}
+
+.LHS, .RHS{
+  flex:1;
+  flex-shrink: 1;
 }
 
 .alien-container{
   display:flex;
-  width:100%;
   padding:1rem;
   border-radius: 1% 1% 40%;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  max-height:100%;
   background-color: rgba(47, 79, 79, 0.253);
 }
 
-.alien img{
-  max-width: 100%;
-  max-height:100%
+.alien-container-lower{
+  display:flex;
 }
 
-#app{
+.alien{
   display:flex;
-  justify-content: center;
-  align-items: center;
-  height:100%;
-  padding:1rem;
+  flex-direction: column;
+}
+
+.spacer{
+  background-color: red;
+  width:4rem;
 }
 
 .bg {
@@ -81,32 +100,9 @@ div.alien{
   display:flex;
   flex-direction: column;
   border: rgb(33, 82, 33) 10px solid;
-  max-height:100%;
   max-width: 80%;
   padding:1.5rem;
   margin:1rem;
 }
 
-.homepage{
-  display:flex;
-  align-items: start;
-  justify-content: center;
-  height:100%;
-}
 
-.RHS{
-  max-height:80%;
-}
-
-.LHS{
-  height:100%;
-  padding:1rem;
-}
-
-header{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items: center;
-  margin-bottom: 1rem;
-}
