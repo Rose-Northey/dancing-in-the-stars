@@ -4,6 +4,7 @@ function Layout() {
   return (
     <>
       <div className="bg">
+        <Header />
         <h1> Layout is working</h1>
         <Outlet />
       </div>
