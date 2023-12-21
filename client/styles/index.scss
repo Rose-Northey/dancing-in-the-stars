@@ -29,6 +29,7 @@ img{
 h1{
   font-family: silkscreen;
   margin:0;
+  line-height: 1.7rem;
 }
 
 header h1{
@@ -36,32 +37,34 @@ header h1{
 }
 header p{
   text-align: center;
+  
 }
 
 .subheader{
   font-family: orbitron;
-  margin:0;
+  margin-top:0.5rem;
 }
 
 div.alien{
   display:flex;
   justify-content: center;
   align-items: center;
-  max-width:100%;
-  max-height:100%;
 }
 
 .alien-container{
-  padding:2rem;
   display:flex;
+  width:100%;
+  padding:1rem;
+  border-radius: 1% 1% 40%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-height:100%;
+  background-color: rgba(47, 79, 79, 0.253);
 }
 
 .alien img{
-  width: 100%;
+  max-width: 100%;
   max-height:100%
 }
 
@@ -70,6 +73,7 @@ div.alien{
   justify-content: center;
   align-items: center;
   height:100%;
+  padding:1rem;
 }
 
 .bg {
@@ -80,17 +84,23 @@ div.alien{
   max-height:100%;
   max-width: 80%;
   padding:1.5rem;
+  margin:1rem;
 }
 
 .homepage{
   display:flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
   height:100%;
 }
 
 .RHS{
+  max-height:80%;
+}
+
+.LHS{
   height:100%;
+  padding:1rem;
 }
 
 header{
@@ -98,4 +108,5 @@ header{
   flex-direction:column;
   justify-content:center;
   align-items: center;
+  margin-bottom: 1rem;
 }

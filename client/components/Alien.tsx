@@ -1,6 +1,8 @@
 export default function Alien() {
-  return (
+  return (<>
+    
     <div className="alien-container">
+      <h2>Skinsuit Progress</h2>
       <div className="alien head">
         <img src="public/aHead.PNG" alt="Alien head"></img>
       </div>
@@ -17,5 +19,6 @@ export default function Alien() {
         <img src="public/aFeet.PNG" alt="alien feet"></img>
       </div>
     </div>
+    </>
   )
 }

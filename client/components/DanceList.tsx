@@ -17,7 +17,10 @@ export default function DanceList() {
   }
 
   return (
-    <div className="dance-container">
+    <div className="dance-list">
+      <h2>
+        Human Dances
+      </h2>
       {dances.map((dance) => (
         <div className="dance-div" key={dance.id}>
           {dance.name}
