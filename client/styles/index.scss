@@ -14,11 +14,13 @@ body {
   padding:0;
   display:flex;
   justify-content: center;
+  height:100vh
 }
 
 #app{
   display:flex;
   justify-content: center;
+  align-items: center;
   height:100%;
   padding:1rem;
   width:100%
@@ -68,10 +70,14 @@ header p{
 
 }
 
-.LHS, .RHS{
-  flex:1;
+.LHS{
+  flex:2;
   flex-shrink: 1;
 }
+.RHS{
+  flex:1;
+}
+
 
 .alien-container{
   display:flex;
@@ -103,6 +109,7 @@ header p{
   max-width: 80%;
   padding:1.5rem;
   margin:1rem;
+  max-height:100%;
 }
 
 

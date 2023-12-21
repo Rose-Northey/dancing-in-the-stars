@@ -3,7 +3,7 @@ export default function Alien() {
     <div className="alien-container">
       <h2>Skinsuit Progress</h2>
       <div className='alien-container-lower'>
-        <div className="spacer"></div>
+        {/* <div className="spacer"></div> */}
         <div className='alien'>
           <img className="head" src="public/aHead.PNG" alt="Alien head"></img>
           <img className="body" src="public/aBody.PNG" alt="alien body"></img>
