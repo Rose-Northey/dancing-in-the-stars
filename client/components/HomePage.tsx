@@ -8,9 +8,14 @@ export default function HomePage() {
 
   return (
     <>
-      <h2>HomePage is working</h2>
-      <DanceList />
-      <Alien />
+      <div className='homepage'>
+        <div className="LHS">
+          <DanceList />
+        </div>
+        <div className="RHS">
+          <Alien />
+        </div>
+      </div>
     </>
   )
 }

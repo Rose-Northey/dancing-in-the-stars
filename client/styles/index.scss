@@ -1,47 +1,101 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap');
+*{
+  box-sizing: border-box;
+  margin:0;
+  padding:0;
+}
 
 html, 
 body {
-  background-color: aqua;
+  background-color: rgb(175, 245, 245);
   font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding:0;
+  height: 100%;
+  display:flex;
+  justify-content: center;
 }
 
-.alien-head img{
-  width: 300px;
-  height: 100px;
-  margin: 0px;
-  padding: 0px;
-  object-fit: cover;
+html{
+  height:100%;
 }
 
-.alien-body img{
-  width: 300px;
-  height: 100px;
-  margin: 0px;
-  padding: 0px;
-  object-fit: cover;
+img{
+  max-width:100%;
+  max-height:100%;
 }
 
-.alien-legs img{
-  width: 300px;
-  height: 100px;
-  margin: 0px;
-  padding: 0px;
-  object-fit: cover;
+
+h1{
+  font-family: silkscreen;
+  margin:0;
 }
 
-.alien-feet img {
-  width: 300px;
-  height: 100px;
-  margin: 0px;
-  padding: 0px;
-  object-fit: cover;
+header h1{
+  text-align:center;
+}
+header p{
+  text-align: center;
+}
+
+.subheader{
+  font-family: orbitron;
+  margin:0;
+}
+
+div.alien{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  max-width:100%;
+  max-height:100%;
+}
+
+.alien-container{
+  padding:2rem;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height:100%;
+}
+
+.alien img{
+  width: 100%;
+  max-height:100%
+}
+
+#app{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height:100%;
 }
 
 .bg {
-  background-color: rgb(65, 219, 65);
-  margin: 0 400px;
-  padding: 10px 30px 10px 30px;
-  text-align: center;
-  border: green 10px solid;
+  background-color: rgb(80, 163, 80);
+  display:flex;
+  flex-direction: column;
+  border: rgb(33, 82, 33) 10px solid;
+  max-height:100%;
+  max-width: 80%;
+  padding:1.5rem;
+}
+
+.homepage{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  height:100%;
+}
+
+.RHS{
+  height:100%;
+}
+
+header{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items: center;
 }
