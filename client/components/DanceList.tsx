@@ -1,4 +1,5 @@
 import { useQuery } from '@tanstack/react-query'
+import { Link } from 'react-router-dom'
 import * as api from '../apis/apiClient'
 
 export default function DanceList() {
@@ -22,9 +23,9 @@ export default function DanceList() {
         Human Dances
       </h2>
       {dances.map((dance) => (
-        <div className="dance-div" key={dance.id}>
-          {dance.name}
-        </div>
+        <Link to ={`/dances/${dance.id}`} key={dance.id}>
+        <h3 >{dance.name}</h3>
+        </Link>
       ))}
     </div>
   )

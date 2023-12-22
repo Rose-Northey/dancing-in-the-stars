@@ -1,11 +1,9 @@
 import connection from './connection.ts'
 import { Fruit, Dance } from '../../models/Dances.ts'
 
-export async function getAllFruits(db = connection): Promise<Fruit[]> {
-  return db('fruit').select()
-}
+const db= connection;
 
-export async function getAllDances(db = connection): Promise<Dance[]> {
+export async function getAllDances(): Promise<Dance[]> {
   return db('Dances')
     .select('id', 'name', 'is_complete as isComplete')
     .returning('*')
@@ -22,10 +20,10 @@ export async function getDancebyId(
     .first()
 }
 
-export async function countCompletion(db = connection): Promise<Dance[]> {
+export async function countCompletion(): Promise<Dance[]> {
   return db('Dances').select('is_complete as isComplete')
 }
 
-export async function updateCompletion(id: number, db = connection) {
-  return db('Dances').where({ id }).update({ is_complete: true })
+export async function updateCompletion({id, currentlyIsComplete}) {
+  return db('Dances').where({ id }).update({ is_complete: !currentlyIsComplete })
 }

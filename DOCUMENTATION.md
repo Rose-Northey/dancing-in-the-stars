@@ -2,14 +2,12 @@
 
 ## Server API Endpoints
 
-  | METHOD | ENDPOINT                     | USAGE                                      | RETURNS                     |
-  | ------ | ---------------------------- | ------------------------------------------ | --------------------------- |
-  | GET    | `/v1/dances`                 | Get a list of dances                       | An array of dances          |
-  | GET    | `/v1/dances/:id`             | Get a dance object by id                   | A specific dance object     |
-  | GET    | `/v1/dances`                 | Get the isComplete field                   | An array of boolean         |
-  | PATCH  | `/v1/dances/:id`             | Update the isComplte field                 | The updated boolean value (true)  |
-    <!-- | POST   | `/v1/posts`                  | Add a new blog post                        | The newly created blog post | -->
-       
+  | METHOD | ENDPOINT             | USAGE                       | RETURNS                          |SENDS        |
+  | ------ | ---------------------| ----------------------------|----------------------------------|-------------|
+  | GET    | `/v1/dances`         | Get a list of dances        | An array of dances               | nothing
+  | GET    | `/v1/dances/:id`     | Get a dance object by id    | A specific dance object          | nothing
+  | GET    | `/v1/dances/complete`| Get the isComplete field    | An array of boolean              | nothing
+  | PATCH  | `/v1/dances/:id`     | Update the isComplte field  | The updated boolean value (true) | {isComplete: X}
 
 ## Post Endpoints
 
