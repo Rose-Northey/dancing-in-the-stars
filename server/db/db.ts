@@ -3,10 +3,6 @@ import { Fruit, Dance } from '../../models/Dances.ts'
 
 const db= connection;
 
-export async function getAllFruits(): Promise<Fruit[]> {
-  return db('fruit').select()
-}
-
 export async function getAllDances(): Promise<Dance[]> {
   return db('Dances')
     .select('id', 'name', 'is_complete as isComplete')

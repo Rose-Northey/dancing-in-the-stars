@@ -1,25 +1,11 @@
 import request from 'superagent'
+import { response } from 'express'
 
-const rootUrl = '/v1'
+const rootUrl = '/api/v1/dances'
 
 export async function getAllDances() {
-  const data = [
-    {
-      id: 1,
-      name: 'Orange Justice',
-      isComplete: false,
-    },
-    {
-      id: 2,
-      name: 'Red Justice',
-      isComplete: false,
-    },
-  ]
-
-  return data
-  // return request.get(rootUrl + '/dances').then((res) => {
-  //   return res.body
-  // })
+  const allDanceHeadings = await request.get(`${rootUrl}/`)
+  return allDanceHeadings.body
 }
 
 export async function getDanceDetails(id) {
@@ -41,35 +27,7 @@ export async function getDanceDetails(id) {
 }
 
 export async function getNumberCompleted() {
-  const data = [
-    {
-      isComplete: false,
-    },
-    {
-      isComplete: true,
-    },
-    {
-      isComplete: true,
-    },
-    {
-      isComplete: true,
-    },
-  ]
 
-  // Map out object
-  // When is complete is true; add 1 to the sum
-  // Sum start at 0
-
-  let numberCompleted = 0
-
-  data.map((object) => {
-    if (object.isComplete === true) {
-      numberCompleted++
-    }
-  })
-  console.log(numberCompleted)
-
-  return numberCompleted
 }
 
 export async function updateNumberCompleted(id) {
