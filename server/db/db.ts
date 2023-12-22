@@ -28,6 +28,6 @@ export async function countCompletion(): Promise<Dance[]> {
   return db('Dances').select('is_complete as isComplete')
 }
 
-export async function updateCompletion(id: number) {
-  return db('Dances').where({ id }).update({ is_complete: true })
+export async function updateCompletion({id, currentlyIsComplete}) {
+  return db('Dances').where({ id }).update({ is_complete: !currentlyIsComplete })
 }

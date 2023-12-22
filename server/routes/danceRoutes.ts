@@ -56,7 +56,8 @@ router.patch('/:id', async (req, res) => {
   const currentlyIsComplete = req.body.isComplete
   try {
     const id = parseInt(req.params.id)
-    const completionArray = await db.updateCompletion(id)
+    const patchObject = {id, currentlyIsComplete}
+    const completionArray = await db.updateCompletion(patchObject)
     res.json(completionArray)
   } catch (error) {
     console.log(error)
