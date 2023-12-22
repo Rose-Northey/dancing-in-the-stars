@@ -60,11 +60,21 @@ header div{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
 }
 
 header button{
   padding:0.3rem;
   background-color: rgba(30, 93, 39, 0.355);
+  transition: background-color 0.3s ease-in-out;
+  border:transparent 5px solid;
+  border-radius: 20%;
+}
+
+header button:hover{
+  padding:0.3rem;
+  border: rgba(0, 0, 0, 0.451) 5px solid;
+  background-color: rgb(175, 245, 245);
   border-radius: 20%;
 }
 
