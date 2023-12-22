@@ -3,9 +3,11 @@ import { useQuery } from '@tanstack/react-query'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import * as api from '../apis/apiClient'
 import ReactPlayer from 'react-player/youtube'
+import { useNavigate } from 'react-router-dom'
 
 export default function DanceDetails() {
   const id:number = Number(useParams().id) 
+  const navigate = useNavigate()
   
   const queryClient = useQueryClient()
   const makeCompleteMutation = useMutation({
@@ -33,6 +35,7 @@ export default function DanceDetails() {
       id, isComplete: singleDance.isComplete
     }
     makeCompleteMutation.mutate(idAndIsComplete)
+    navigate(`/`)
   }
 
 
