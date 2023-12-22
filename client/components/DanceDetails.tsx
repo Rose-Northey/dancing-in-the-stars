@@ -10,7 +10,7 @@ export default function DanceDetails() {
     data: singleDance,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['dances', id], queryFn: () => api.getDanceDetails(id) })
+  } = useQuery({ queryKey: ['dances', 'completed', id], queryFn: () => api.getDanceDetails(id) })
 
   if (isError) {
     return <p>dance error!</p>
@@ -41,7 +41,7 @@ export default function DanceDetails() {
         />
       </div>
       </div>
-      <button onclick={handleClick}><p>Dance Mastery</p> <p className='complete'>Complete</p></button>
+      <button onClick={handleClick}><p>Dance Mastery</p> <p className='complete'>Complete</p></button>
     </div>
   )
 }

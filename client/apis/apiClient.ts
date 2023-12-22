@@ -10,21 +10,8 @@ export async function getAllDances() {
 }
 
 export async function getDanceDetails(id) {
-  const data = {
-    id: 1,
-    name: 'Orange Justice',
-    description: 'blah blah blah',
-    link: 'https://youtu.be/Vcu5jPqqN1k?si=v53gNaOouFY-i_De',
-    isComplete: 1,
-  }
-
-  return data
-
-  //make a request for route 	/v1/dances/:id
-
-  // return request.get(rootUrl + `dances/${id}`).then((res) => {
-  //   return res.body
-  // })
+  const danceDetails = await request.get(`${rootUrl}/${id}`)
+  return danceDetails.body
 }
 
 export async function getNumberCompleted() {

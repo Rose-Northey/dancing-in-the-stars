@@ -23,9 +23,14 @@ export default function DanceList() {
         Human Dances
       </h2>
       {dances.map((dance) => (
-        <Link to ={`/dances/${dance.id}`} key={dance.id}>
-        <h3 >{dance.name}</h3>
+        <div className='dance-list-item' key={dance.id}>
+        <Link to ={`/dances/${dance.id}`} >
+          <div className='link'>
+            <h3 >{dance.name}</h3>
+          </div>
         </Link>
+        <img src={dance.isComplete?'/checked.png':'/unchecked.png'}/>
+        </div>
       ))}
     </div>
   )
