@@ -15,7 +15,7 @@ const router = Router()
 //   }
 // })
 
-// /v1/dances
+// api/v1/dances
 router.get('/', async (req, res) => {
   try {
     const dances = await db.getAllDances()
@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-// /v1/dances/:id
+// /v1/dances/count
 router.get('/count', async (req, res) => {
   try {
     const count = await db.countCompletion()
@@ -39,8 +39,8 @@ router.get('/count', async (req, res) => {
   }
 })
 
-// /v1/dances/count/:id
-router.get('/count', async (req, res) => {
+// /v1/dances/:id
+router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const singleDance = await db.getDancebyId(id)
