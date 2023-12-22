@@ -3,29 +3,33 @@ import { useQuery } from '@tanstack/react-query'
 import * as api from '../apis/apiClient'
 
 export default function DanceDetails() {
-  const id = Number(useParams)
+  const id:number = Number(useParams().id)
+
   const {
-    data: dance,
+    data: singleDance,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['dance'], queryFn: api.getDanceDetails(id) })
+  } = useQuery({ queryKey: ['dances', id], queryFn: () => api.getDanceDetails(id) })
 
   if (isError) {
     return <p>dance error!</p>
   }
 
-  if (!dance || isLoading) {
+  if (!singleDance || isLoading) {
     return <p>Loading...</p>
   }
-
+  console.log(singleDance)
   return (
     <div className="dance-container">
-      {dance.map((d) => (
-        <div className="dance-div" key={d.id}>
-          <p>{d.name}</p>
-          <p>{d.description}</p>
-        </div>
-      ))}
+      <div className='details-LHS'>
+        <h2>Dance: </h2>
+        <h3>{singleDance.name}</h3>
+        <h2>Description:</h2>
+        <p>{singleDance.description}</p>
+      </div>
+      <div className='details-RHS'>
+        
+      </div>
     </div>
   )
 }

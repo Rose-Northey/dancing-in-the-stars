@@ -14,7 +14,7 @@ export async function getDanceDetails(id) {
     name: 'Orange Justice',
     description: 'blah blah blah',
     link: 'youtube url',
-    isComplete: false,
+    isComplete: 1,
   }
 
   return data
