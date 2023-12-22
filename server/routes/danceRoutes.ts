@@ -30,8 +30,9 @@ router.get('/', async (req, res) => {
 // /v1/dances/count
 router.get('/count', async (req, res) => {
   try {
-    const count = await db.countCompletion()
-
+    const isCompleteArray = await db.countCompletion()
+    let count:number = 0;
+    isCompleteArray.map((obj)=>{obj.isComplete?count++:count})
     res.json(count)
   } catch (error) {
     console.log(error)
