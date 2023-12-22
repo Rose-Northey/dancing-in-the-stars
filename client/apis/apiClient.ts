@@ -16,19 +16,14 @@ export async function getDanceDetails(id) {
 
 export async function getNumberCompleted() {
   const numberComplete = await request.get(`${rootUrl}/count`)
-  console.log('hey')
   return numberComplete.body
 }
 
-export async function updateNumberCompleted(id) {
-  // input the id
-  // add true no matter what it is
-  //true no matter what it is
-
- console.log('patch function runs')
-  
-  // await request.patch(`/v1/dances/${id}`).send({
-  //   "isComplete": true,
-  // })
-
+export async function updateNumberCompleted(idAndIsComplete) {
+  const isComplete = idAndIsComplete.isComplete
+  const id = idAndIsComplete.id
+  const response = await request
+  .patch(`${rootUrl}/${id}`)
+  .send({isComplete})
+  return{}
 }

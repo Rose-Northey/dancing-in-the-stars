@@ -1,27 +1,38 @@
 import { useParams } from 'react-router-dom'
 import { useQuery } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import * as api from '../apis/apiClient'
 import ReactPlayer from 'react-player/youtube'
 
 export default function DanceDetails() {
-  const id:number = Number(useParams().id)
+  const id:number = Number(useParams().id) 
+  
+  const queryClient = useQueryClient()
+  const makeCompleteMutation = useMutation({
+    mutationFn: api.updateNumberCompleted,
+    onSuccess: async()=>{
+      queryClient.invalidateQueries({queryKey:['dances', 'completed', id]})
+    }
+  })
 
   const {
     data: singleDance,
     isError,
     isLoading,
   } = useQuery({ queryKey: ['dances', 'completed', id], queryFn: () => api.getDanceDetails(id) })
-
   if (isError) {
     return <p>dance error!</p>
   }
-
   if (!singleDance || isLoading) {
     return <p>Loading...</p>
   }
 
-  function handleClick (){
-
+ 
+  function handleClick (){ 
+    const idAndIsComplete = {
+      id, isComplete: singleDance.isComplete
+    }
+    makeCompleteMutation.mutate(idAndIsComplete)
   }
 
 

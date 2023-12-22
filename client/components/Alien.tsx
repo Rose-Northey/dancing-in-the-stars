@@ -16,9 +16,6 @@ export default function Alien() {
     return <p>Loading...</p>
   }
 
-
-  console.log(num)
-
   return (<>
     <div className="alien-container">
       <h2>Skinsuit Progress</h2>

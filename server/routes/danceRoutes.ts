@@ -8,7 +8,6 @@ const router = Router()
 router.get('/', async (req, res) => {
   try {
     const dances = await db.getAllDances()
-
     res.json(dances)
   } catch (error) {
     console.log(error)
