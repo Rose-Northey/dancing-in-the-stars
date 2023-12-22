@@ -112,4 +112,60 @@ header p{
   max-height:100%;
 }
 
+.dance-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.details-upper{
+display:flex;
+flex-direction:column;
+align-items: start;
+margin-bottom: 1rem;;
+}
+
+.player-wrapper {
+  position: relative;
+  padding-top: 56.25%; /* Player ratio: 100 / (1280 / 720) */
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+button{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding:0.5rem;
+  margin-top:1rem;
+  max-width:13rem;
+  transition: max-width 0.8s ease-in-out;
+  border:transparent 3px solid;
+}
+button:hover{
+  max-width:100%;
+  background-color: aquamarine;
+  border:black 3px solid;
+}
+button:active{
+  max-width:100%;
+  background-color: rgba(127, 255, 212, 0.397);
+  transition: background-color 0.1s ease-in-out;
+  border:black 3px solid;
+}
+
+
+button p{
+  font-family: silkscreen;
+  font-size: 1rem;
+  
+  line-height: 1.3rem;
+}
+button p.complete{
+  font-size: 1.65rem;
+}

@@ -28,6 +28,8 @@
   "dependencies": {
     "express": "^4.17.2",
     "knex": "^2.5.1",
+    "react-player": "^2.14.1",
+    "react-youtube": "^10.1.0",
     "sqlite3": "^5.1.6",
     "superagent": "7.1.1"
   },

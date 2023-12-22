@@ -1,6 +1,7 @@
 import request from 'superagent'
 import { response } from 'express'
 
+
 const rootUrl = '/api/v1/dances'
 
 export async function getAllDances() {
@@ -13,7 +14,7 @@ export async function getDanceDetails(id) {
     id: 1,
     name: 'Orange Justice',
     description: 'blah blah blah',
-    link: 'youtube url',
+    link: 'https://youtu.be/Vcu5jPqqN1k?si=v53gNaOouFY-i_De',
     isComplete: 1,
   }
 
