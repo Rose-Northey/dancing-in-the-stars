@@ -53,7 +53,17 @@ header h1{
 }
 header p{
   text-align: center;
-  
+}
+header div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header button{
+  padding:0.3rem;
+  background-color: rgba(30, 93, 39, 0.355);
+  border-radius: 20%;
 }
 
 .subheader{
@@ -136,7 +146,7 @@ margin-bottom: 1rem;;
   left: 0;
 }
 
-button{
+.dance-container button{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -147,12 +157,12 @@ button{
   transition: max-width 0.8s ease-in-out;
   border:transparent 3px solid;
 }
-button:hover{
+.dance-container button:hover{
   max-width:100%;
   background-color: aquamarine;
   border:black 3px solid;
 }
-button:active{
+.dance-container  button:active{
   max-width:100%;
   background-color: rgba(127, 255, 212, 0.397);
   transition: background-color 0.1s ease-in-out;
@@ -160,12 +170,12 @@ button:active{
 }
 
 
-button p{
+.dance-container  button p{
   font-family: silkscreen;
   font-size: 1rem;
   
   line-height: 1.3rem;
 }
-button p.complete{
+.dance-container  button p.complete{
   font-size: 1.65rem;
 }
