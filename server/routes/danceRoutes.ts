@@ -44,7 +44,6 @@ router.get('/:id', async (req, res) => {
   try {
     const { id } = req.params
     const singleDance = await db.getDancebyId(id)
-
     res.json(singleDance)
   } catch (error) {
     console.log(error)
@@ -54,12 +53,10 @@ router.get('/:id', async (req, res) => {
 
 // /v1/dances/:id
 router.patch('/:id', async (req, res) => {
+  const currentlyIsComplete = req.body.isComplete
   try {
     const id = parseInt(req.params.id)
-    console.log(id)
-
     const completionArray = await db.updateCompletion(id)
-
     res.json(completionArray)
   } catch (error) {
     console.log(error)
