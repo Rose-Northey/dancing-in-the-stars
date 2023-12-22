@@ -13,7 +13,6 @@ export async function getDancebyId(
   id: number,
   db = connection,
 ): Promise<Dance[]> {
-  console.log()
   return db('Dances')
     .select('id', 'name', 'description', 'link', 'is_complete as isComplete')
     .where('id', id)

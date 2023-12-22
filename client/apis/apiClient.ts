@@ -28,7 +28,9 @@ export async function getDanceDetails(id) {
 }
 
 export async function getNumberCompleted() {
-
+  const numberComplete = await request.get(`${rootUrl}/count`)
+  console.log('hey')
+  return numberComplete.body
 }
 
 export async function updateNumberCompleted(id) {
