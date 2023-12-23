@@ -20,6 +20,7 @@ export async function getNumberCompleted() {
 }
 
 export async function updateNumberCompleted(idAndIsComplete) {
+  console.log('update runs')
   const isComplete = idAndIsComplete.isComplete
   const id = idAndIsComplete.id
   const response = await request

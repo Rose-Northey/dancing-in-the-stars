@@ -12,9 +12,10 @@ export default function Alien() {
     return <p>dance error!</p>
   }
 
-  if (!num || isLoading) {
+  if (isLoading) {
     return <p>Loading...</p>
   }
+
 
   return (<>
     <div className="alien-container">

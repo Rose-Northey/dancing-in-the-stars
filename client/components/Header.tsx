@@ -7,7 +7,7 @@ export default function Header(){
           <h1>Dancing In The Stars</h1>
           <Link to='/'><button><p>Home</p></button></Link>
         </div>
-        <p className= "subheader">become human through dance</p>
+        <p className= "subheader">why be a human master, when you could be a dance-master?</p>
       </header>
     </>)
 }

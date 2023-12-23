@@ -13,7 +13,7 @@ export default function DanceDetails() {
   const makeCompleteMutation = useMutation({
     mutationFn: api.updateNumberCompleted,
     onSuccess: async()=>{
-      queryClient.invalidateQueries({queryKey:['dances', 'completed', id]})
+      queryClient.invalidateQueries({queryKey:['dances', 'completed',id]})
     }
   })
 

@@ -1,13 +1,24 @@
 import { useQuery } from '@tanstack/react-query'
 import { Link } from 'react-router-dom'
 import * as api from '../apis/apiClient'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export default function DanceList() {
+  // const queryClient = useQueryClient()
+
+  // const makeCompleteMutation2 = useMutation({
+  // mutationFn: api.updateNumberCompleted,
+  // onSuccess: async()=>{
+  //   console.log('onsuccess works')
+  //   queryClient.invalidateQueries({queryKey:['dances', 'completed']})
+  // }
+  // })
+  
   const {
     data: dances,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['dances'], queryFn: api.getAllDances })
+  } = useQuery({ queryKey: ['dances','completed'], queryFn: api.getAllDances })
 
   if (isError) {
     return <p>dance error!</p>
@@ -16,6 +27,15 @@ export default function DanceList() {
   if (!dances || isLoading) {
     return <p>Loading...</p>
   }
+
+  // function handleCheckBox (id, isComplete){ 
+  //   const idAndIsComplete = {
+  //     id, isComplete
+  //   }
+  //   makeCompleteMutation2.mutate(idAndIsComplete)
+  // }
+
+
 
   return (
     <div className="dance-list">
@@ -30,6 +50,7 @@ export default function DanceList() {
           </div>
         </Link>
         <img src={dance.isComplete?'/checked.png':'/unchecked.png'}/>
+        {/*onClick={()=>{handleCheckBox(dance.id, dance.isComplete)}} */ }
         </div>
       ))}
     </div>
