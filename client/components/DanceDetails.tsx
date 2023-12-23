@@ -40,6 +40,7 @@ export default function DanceDetails() {
 
 
   return (
+    <div className='dance-details'>
     <div className="dance-container">
       <div className='details-upper'>
         <h2>{singleDance.name}</h2>
@@ -54,8 +55,9 @@ export default function DanceDetails() {
           height='100%'
         />
       </div>
-      </div>
-      <button onClick={handleClick}><p>Dance Mastery</p> <p className='complete'>Complete</p></button>
+      </div> 
     </div>
+    <button onClick={handleClick}><p>Dance Mastery</p> <p className='complete'>Complete</p></button>
+  </div>
   )
 }
