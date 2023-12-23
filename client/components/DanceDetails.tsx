@@ -57,7 +57,7 @@ export default function DanceDetails() {
       </div>
       </div> 
     </div>
-    <button onClick={handleClick}><p>Dance Mastery</p> <p className='complete'>Complete</p></button>
+    <button onClick={handleClick}><p>{singleDance.isComplete?'I was wrong. I am':`Dance Mastery`}</p> <p className='complete'>{singleDance.isComplete?'incompetent':'complete'}</p></button>
   </div>
   )
 }

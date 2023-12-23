@@ -52,6 +52,10 @@ header{
   margin-bottom: 1rem;
 }
 
+.hidden{
+  display:none;
+}
+
 .alien:hover{
   animation: jiggle 0.5s ease infinite; 
 }
@@ -226,7 +230,7 @@ margin-bottom: 1rem;;
   justify-content: center;
   padding:0.5rem;
   margin-top:1rem;
-  max-width:13rem;
+  max-width:16rem;
   transition: max-width 0.8s ease-in-out;
   border:transparent 3px solid;
 }
