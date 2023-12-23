@@ -26,7 +26,7 @@ body {
 }
 
 img{
-  max-width:100%
+  max-width:100%;
 }
 
 header{
@@ -35,6 +35,10 @@ header{
   justify-content:center;
   align-items: center;
   margin-bottom: 1rem;
+}
+
+.alien:hover{
+  animation: jiggle 0.5s ease infinite; 
 }
 
 h1{
@@ -234,3 +238,10 @@ margin-bottom: 1rem;;
   font-size: 1.65rem;
 }
 
+@keyframes jiggle {
+  0% { transform: rotate(-1deg); }
+  25% { transform: rotate(1deg); }
+  50% { transform: rotate(-1deg); }
+  75% { transform: rotate(1deg); }
+  100% { transform: rotate(0deg); }
+}
