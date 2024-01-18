@@ -6,14 +6,15 @@ import ReactPlayer from 'react-player/youtube'
 import { useNavigate } from 'react-router-dom'
 
 export default function DanceDetails() {
-  const id:number = Number(useParams().id) 
+  const id = Number(useParams().id) 
   const navigate = useNavigate()
   
   const queryClient = useQueryClient()
   const makeCompleteMutation = useMutation({
     mutationFn: api.updateNumberCompleted,
     onSuccess: async()=>{
-      queryClient.invalidateQueries({queryKey:['dances', 'completed',id]})
+      queryClient.invalidateQueries({queryKey:['dances','complete']}
+      )
     }
   })
 
@@ -21,7 +22,7 @@ export default function DanceDetails() {
     data: singleDance,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['dances', 'completed', id], queryFn: () => api.getDanceDetails(id) })
+  } = useQuery({ queryKey: ['dances', 'complete', id], queryFn: () => api.getDanceDetails(id) })
   if (isError) {
     return <p>dance error!</p>
   }

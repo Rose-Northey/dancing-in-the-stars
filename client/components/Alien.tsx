@@ -6,7 +6,7 @@ export default function Alien() {
     data: num,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['completed'], queryFn: api.getNumberCompleted })
+  } = useQuery({ queryKey: ['complete'], queryFn: api.getNumberCompleted })
 
   if (isError) {
     return <p>dance error!</p>

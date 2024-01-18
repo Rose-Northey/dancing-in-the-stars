@@ -4,21 +4,11 @@ import * as api from '../apis/apiClient'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 export default function DanceList() {
-  // const queryClient = useQueryClient()
-
-  // const makeCompleteMutation2 = useMutation({
-  // mutationFn: api.updateNumberCompleted,
-  // onSuccess: async()=>{
-  //   console.log('onsuccess works')
-  //   queryClient.invalidateQueries({queryKey:['dances', 'completed']})
-  // }
-  // })
-  
   const {
     data: dances,
     isError,
     isLoading,
-  } = useQuery({ queryKey: ['dances','completed'], queryFn: api.getAllDances })
+  } = useQuery({ queryKey: ['dances','complete'], queryFn: api.getAllDances })
 
   if (isError) {
     return <p>dance error!</p>
