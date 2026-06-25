@@ -8,7 +8,7 @@ step "run-a-script" {
             Octopus.Action.Script.ScriptBody = <<-EOT
                 Write-Output "Hello, World!"
                 
-                EOT
+                    EOT
             Octopus.Action.Script.ScriptSource = "Inline"
             Octopus.Action.Script.Syntax = "PowerShell"
         }
